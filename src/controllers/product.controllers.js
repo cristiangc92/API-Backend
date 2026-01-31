@@ -32,3 +32,29 @@ export const getProductById = async (req, res) => {
         })        
     }
 }
+
+export const createProduct = async (req, res) => {
+    const { name, description, price, category, image } = req.body
+
+    //validacion básica
+    if(!name || !price){
+        return res.status(400).json({
+            error: "El nombre y el precio son obliatorios"
+        })
+    }
+
+    try {
+        const result = await pool.query(
+            `INSERT INTO products (name, description, price, category, image)
+            VALUES ($1, $2, $3, $4, $5)
+            RETURNING *`, [name, description, price, category, image]
+            //RETURNING * → devuelve el producto creado
+        )
+
+        res.status(201).json(result.rows[0]) //Status 201 → creado correctamente
+    } catch (error) {
+        res.status(500).json({
+            error: "Error al crear el producto"
+        })        
+    }
+}
