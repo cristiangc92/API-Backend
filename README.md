@@ -100,6 +100,18 @@ https://novastore-api.onrender.com
 
 ---
 
+## 🎯 Objetivo del proyecto
+
+Este proyecto fue desarrollado con fines educativos y profesionales, enfocado en:
+
+- Buenas prácticas de backend
+- Arquitectura MVC simple
+- Manejo de rutas y controladores
+- Conexión y consultas a PostgreSQL
+- Preparación para consumo desde un frontend en React
+
+---
+
 👨‍💻 Autor
 Cristian Gabriel Cacciolatti
 📧 cristiangc92@gmail.com
